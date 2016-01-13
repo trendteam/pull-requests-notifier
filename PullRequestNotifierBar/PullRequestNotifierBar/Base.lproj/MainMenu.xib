@@ -12,18 +12,19 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PullRequestNotifierBar" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PullRequestNotifierBar" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="GQd-7X-Jm3" customClass="StatusMenuController" customModule="PullRequestNotifierBar" customModuleProvider="target">
             <connections>
-                <outlet property="statusMenu" destination="Ilu-p5-oz7" id="Wlf-RI-c6c"/>
+                <outlet property="statusMenu" destination="Ilu-p5-oz7" id="Aa2-th-mCN"/>
             </connections>
         </customObject>
-        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="Ilu-p5-oz7">
             <items>
                 <menuItem title="Quit" id="Dll-vn-Cnu">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="Voe-Tx-rLC" id="jN5-9G-RGI"/>
+                        <action selector="quitClicked:" target="GQd-7X-Jm3" id="GXz-fa-njd"/>
                     </connections>
                 </menuItem>
             </items>
