@@ -32,6 +32,13 @@
                         <action selector="showPRClicked:" target="GQd-7X-Jm3" id="JpW-XE-T19"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="5rl-oO-pYy"/>
+                <menuItem title="Create PR" id="SGb-gO-AcD">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="createPRClicked:" target="GQd-7X-Jm3" id="3XQ-9p-tpL"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="qzh-Su-rMY"/>
                 <menuItem title="Settings" id="u4U-Mb-J9T">
                     <modifierMask key="keyEquivalentModifierMask"/>

@@ -53,6 +53,10 @@ class StatusMenuController: NSObject, SettingsWindowDelegate, GitHubConnectorDel
         NSWorkspace.sharedWorkspace().openURL(NSURL(string: "https://github.com/pulls/assigned")!)
     }
     
+    @IBAction func createPRClicked(sender: AnyObject) {
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "https://github.com/garbarino-com/Garbarino-iOS/compare")!)
+    }
+    
     func pendingPullRequestDidUpdate(pendingPullRequestModel: PendingPullRequestModel) {
         totalPRMenuItem.title = pendingPullRequestModel.description;
         
