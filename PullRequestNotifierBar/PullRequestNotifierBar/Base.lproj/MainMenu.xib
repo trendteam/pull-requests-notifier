@@ -31,7 +31,7 @@
                 <menuItem title="Settings" id="u4U-Mb-J9T">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="GQd-7X-Jm3" id="lMx-yQ-Flk"/>
+                        <action selector="settingsClicked:" target="GQd-7X-Jm3" id="NeK-cY-oBl"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="y22-kl-cxq"/>

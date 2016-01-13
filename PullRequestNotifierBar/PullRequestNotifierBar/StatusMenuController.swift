@@ -8,19 +8,32 @@
 
 import Cocoa
 
-class StatusMenuController: NSObject {
+class StatusMenuController: NSObject, SettingsWindowDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+    
+    var settingsWindow : SettingsWindow!
     
     override func awakeFromNib() {
         let icon = NSImage(named: "statusIcon")
         icon?.template = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
+        
+        settingsWindow = SettingsWindow();
+        settingsWindow.delegate = self;
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
         NSApplication.sharedApplication().terminate(self)
+    }
+    
+    @IBAction func settingsClicked(sender: NSMenuItem) {
+        settingsWindow.showWindow(nil)
+    }
+    
+    func settingsDidUpdate() {
+        // Actualizar pr pendientes
     }
 }
