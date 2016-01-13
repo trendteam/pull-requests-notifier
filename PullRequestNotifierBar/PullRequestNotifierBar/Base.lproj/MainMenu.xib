@@ -29,7 +29,7 @@
                 <menuItem title="View PRs" id="Dll-vn-Cnu">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="GQd-7X-Jm3" id="GXz-fa-njd"/>
+                        <action selector="showPRClicked:" target="GQd-7X-Jm3" id="JpW-XE-T19"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="qzh-Su-rMY"/>

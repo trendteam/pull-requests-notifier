@@ -28,6 +28,7 @@ class StatusMenuController: NSObject, SettingsWindowDelegate, GitHubConnectorDel
         githubConnector = GitHubConnector(delegate: self);
         
         updatePendingPullRequest()
+        NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "updatePendingPullRequest", userInfo: nil, repeats: true)
     }
     
     func updatePendingPullRequest() {
@@ -42,11 +43,23 @@ class StatusMenuController: NSObject, SettingsWindowDelegate, GitHubConnectorDel
         settingsWindow.showWindow(nil)
     }
     
+    @IBAction func showPRClicked(sender: AnyObject) {
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "https://github.com/pulls/assigned")!)
+    }
+    
     func pendingPullRequestDidUpdate(pendingPullRequestModel: PendingPullRequestModel) {
         totalPRMenuItem.title = pendingPullRequestModel.description;
+        
+        if (pendingPullRequestModel.totalCount.integerValue > 0) {
+            let icon = NSImage(named: "PRPending")
+            statusItem.image = icon
+        } else {
+            let icon = NSImage(named: "PROk")
+            statusItem.image = icon
+        }
     }
     
     func settingsDidUpdate() {
-        // Actualizar pr pendientes
+        updatePendingPullRequest()
     }
 }
