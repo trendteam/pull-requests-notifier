@@ -14,6 +14,7 @@ class StatusMenuController: NSObject, SettingsWindowDelegate {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     
     var settingsWindow : SettingsWindow!
+    var githubConnector : GitHubConnector!
     
     override func awakeFromNib() {
         let icon = NSImage(named: "statusIcon")
@@ -23,6 +24,13 @@ class StatusMenuController: NSObject, SettingsWindowDelegate {
         
         settingsWindow = SettingsWindow();
         settingsWindow.delegate = self;
+        githubConnector = GitHubConnector();
+        
+        updatePendingPullRequest()
+    }
+    
+    func updatePendingPullRequest() {
+        githubConnector.fetchPendingPullRequest(settingsWindow.retrieveUserName(), token: settingsWindow.retrieveToken())
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {

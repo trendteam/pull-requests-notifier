@@ -13,6 +13,7 @@
 		0F3F6FE41C45EA6F001EBAE7 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FE31C45EA6F001EBAE7 /* StatusMenuController.swift */; };
 		0F3F6FE71C45EFC3001EBAE7 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FE51C45EFC3001EBAE7 /* SettingsWindow.swift */; };
 		0F3F6FE81C45EFC3001EBAE7 /* SettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6FE61C45EFC3001EBAE7 /* SettingsWindow.xib */; };
+		0F3F6FEA1C45F9EE001EBAE7 /* GitHubConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FE91C45F9EE001EBAE7 /* GitHubConnector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0F3F6FE31C45EA6F001EBAE7 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		0F3F6FE51C45EFC3001EBAE7 /* SettingsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
 		0F3F6FE61C45EFC3001EBAE7 /* SettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsWindow.xib; sourceTree = "<group>"; };
+		0F3F6FE91C45F9EE001EBAE7 /* GitHubConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubConnector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0F3F6FE31C45EA6F001EBAE7 /* StatusMenuController.swift */,
 				0F3F6FE51C45EFC3001EBAE7 /* SettingsWindow.swift */,
 				0F3F6FE61C45EFC3001EBAE7 /* SettingsWindow.xib */,
+				0F3F6FE91C45F9EE001EBAE7 /* GitHubConnector.swift */,
 			);
 			path = PullRequestNotifierBar;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				0F3F6FE41C45EA6F001EBAE7 /* StatusMenuController.swift in Sources */,
 				0F3F6FE71C45EFC3001EBAE7 /* SettingsWindow.swift in Sources */,
+				0F3F6FEA1C45F9EE001EBAE7 /* GitHubConnector.swift in Sources */,
 				0F3F6FD71C45DB36001EBAE7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,9 +33,8 @@ class SettingsWindow: NSWindowController, NSWindowDelegate {
         self.window?.makeKeyAndOrderFront(nil)
         NSApp.activateIgnoringOtherApps(true)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        userNameTextField.stringValue = defaults.stringForKey(USER_DEFAULT_USER_NAME) ?? "";
-        tokenTextField.stringValue = defaults.stringForKey(USER_DEFAULT_TOKEN) ?? "";
+        userNameTextField.stringValue = self.retrieveUserName()
+        tokenTextField.stringValue = self.retrieveToken()
     }
     
     func windowWillClose(notification: NSNotification) {
@@ -44,6 +43,16 @@ class SettingsWindow: NSWindowController, NSWindowDelegate {
         defaults.setValue(tokenTextField.stringValue, forKey: USER_DEFAULT_TOKEN)
         
         delegate?.settingsDidUpdate()
+    }
+    
+    func retrieveUserName () -> String {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.stringForKey(USER_DEFAULT_USER_NAME) ?? "";
+    }
+    
+    func retrieveToken () -> String {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.stringForKey(USER_DEFAULT_TOKEN) ?? "";
     }
     
 }
