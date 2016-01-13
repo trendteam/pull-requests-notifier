@@ -21,7 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        statusItem.title = "PR Notifier"
+        let icon = NSImage(named: "statusIcon")
+        icon?.template = true // best for dark mode
+        statusItem.image = icon
         statusItem.menu = statusMenu
     }
 
