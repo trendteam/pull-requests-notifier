@@ -17,10 +17,15 @@
         <customObject id="GQd-7X-Jm3" customClass="StatusMenuController" customModule="PullRequestNotifierBar" customModuleProvider="target">
             <connections>
                 <outlet property="statusMenu" destination="Ilu-p5-oz7" id="Aa2-th-mCN"/>
+                <outlet property="totalPRMenuItem" destination="Cqk-bS-0oD" id="anH-WJ-dHx"/>
             </connections>
         </customObject>
         <menu id="Ilu-p5-oz7">
             <items>
+                <menuItem title="Debes 0 PR" id="Cqk-bS-0oD">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="zpN-J4-8In"/>
                 <menuItem title="View PRs" id="Dll-vn-Cnu">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

@@ -8,8 +8,9 @@
 
 import Cocoa
 
-class StatusMenuController: NSObject, SettingsWindowDelegate {
+class StatusMenuController: NSObject, SettingsWindowDelegate, GitHubConnectorDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var totalPRMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     
@@ -24,7 +25,7 @@ class StatusMenuController: NSObject, SettingsWindowDelegate {
         
         settingsWindow = SettingsWindow();
         settingsWindow.delegate = self;
-        githubConnector = GitHubConnector();
+        githubConnector = GitHubConnector(delegate: self);
         
         updatePendingPullRequest()
     }
@@ -39,6 +40,10 @@ class StatusMenuController: NSObject, SettingsWindowDelegate {
     
     @IBAction func settingsClicked(sender: NSMenuItem) {
         settingsWindow.showWindow(nil)
+    }
+    
+    func pendingPullRequestDidUpdate(pendingPullRequestModel: PendingPullRequestModel) {
+        totalPRMenuItem.title = pendingPullRequestModel.description;
     }
     
     func settingsDidUpdate() {

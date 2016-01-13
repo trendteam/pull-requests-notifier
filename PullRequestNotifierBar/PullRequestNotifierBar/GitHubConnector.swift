@@ -8,10 +8,19 @@
 
 import Cocoa
 
+protocol GitHubConnectorDelegate {
+    func pendingPullRequestDidUpdate(pendingPullRequestModel: PendingPullRequestModel)
+}
+
 class GitHubConnector: NSObject {
     
     let BASE_URL = "https://api.github.com/search/issues"
     
+    var delegate: GitHubConnectorDelegate?
+
+    init(delegate: GitHubConnectorDelegate) {
+        self.delegate = delegate
+    }
     
     func fetchPendingPullRequest(userName : String, token : String) {
         
@@ -26,8 +35,9 @@ class GitHubConnector: NSObject {
             if let httpResponse = response as? NSHTTPURLResponse {
                 switch httpResponse.statusCode {
                 case 200: // all good!
-                    let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                    NSLog(dataString)
+                    if let pendingPullRequestModel = self.pendingPullRequestModelFromJSON(data!) {
+                        self.delegate?.pendingPullRequestDidUpdate(pendingPullRequestModel)
+                    }
                 case 401: // unauthorized
                     NSLog("github api returned an 'unauthorized' response.")
                 default:
@@ -39,4 +49,30 @@ class GitHubConnector: NSObject {
         task.resume()
     }
 
+    
+    func pendingPullRequestModelFromJSON(data: NSData) -> PendingPullRequestModel? {
+        typealias JSONDict = [String:AnyObject]
+        let json : JSONDict
+        
+        do {
+            json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! JSONDict
+        } catch {
+            NSLog("JSON parsing failed: \(error)")
+            return nil
+        }
+        
+        let pendingPullRequestModel = PendingPullRequestModel (
+            totalCount:json["total_count"] as! NSNumber
+        )
+        
+        return pendingPullRequestModel
+    }
+}
+
+struct PendingPullRequestModel:CustomStringConvertible {
+    var totalCount : NSNumber
+    
+    var description: String {
+        return "Tenes \(totalCount) PR"
+    }
 }
