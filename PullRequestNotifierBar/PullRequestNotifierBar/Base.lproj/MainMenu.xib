@@ -21,10 +21,24 @@
         </customObject>
         <menu id="Ilu-p5-oz7">
             <items>
-                <menuItem title="Quit" id="Dll-vn-Cnu">
+                <menuItem title="View PRs" id="Dll-vn-Cnu">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="quitClicked:" target="GQd-7X-Jm3" id="GXz-fa-njd"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="qzh-Su-rMY"/>
+                <menuItem title="Settings" id="u4U-Mb-J9T">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="GQd-7X-Jm3" id="lMx-yQ-Flk"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="y22-kl-cxq"/>
+                <menuItem title="Quit" id="s5G-yx-GwB">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="GQd-7X-Jm3" id="aMa-Ye-Ire"/>
                     </connections>
                 </menuItem>
             </items>
