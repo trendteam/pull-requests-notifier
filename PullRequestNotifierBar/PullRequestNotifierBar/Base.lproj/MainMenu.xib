@@ -40,6 +40,13 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="y22-kl-cxq"/>
+                <menuItem title="About" id="aCk-rf-n17">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="aboutClicked:" target="GQd-7X-Jm3" id="3Oz-Si-0Ng"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="r8d-75-qhA"/>
                 <menuItem title="Quit" id="s5G-yx-GwB">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

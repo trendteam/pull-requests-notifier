@@ -14,6 +14,8 @@
 		0F3F6FE71C45EFC3001EBAE7 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FE51C45EFC3001EBAE7 /* SettingsWindow.swift */; };
 		0F3F6FE81C45EFC3001EBAE7 /* SettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F6FE61C45EFC3001EBAE7 /* SettingsWindow.xib */; };
 		0F3F6FEA1C45F9EE001EBAE7 /* GitHubConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F6FE91C45F9EE001EBAE7 /* GitHubConnector.swift */; };
+		0F408A511C4683CD00DCA898 /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F408A4F1C4683CD00DCA898 /* AboutWindow.swift */; };
+		0F408A521C4683CD00DCA898 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F408A501C4683CD00DCA898 /* AboutWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		0F3F6FE51C45EFC3001EBAE7 /* SettingsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
 		0F3F6FE61C45EFC3001EBAE7 /* SettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsWindow.xib; sourceTree = "<group>"; };
 		0F3F6FE91C45F9EE001EBAE7 /* GitHubConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubConnector.swift; sourceTree = "<group>"; };
+		0F408A4F1C4683CD00DCA898 /* AboutWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
+		0F408A501C4683CD00DCA898 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +66,12 @@
 				0F3F6FD81C45DB36001EBAE7 /* Assets.xcassets */,
 				0F3F6FDA1C45DB36001EBAE7 /* MainMenu.xib */,
 				0F3F6FDD1C45DB36001EBAE7 /* Info.plist */,
+				0F3F6FE91C45F9EE001EBAE7 /* GitHubConnector.swift */,
 				0F3F6FE31C45EA6F001EBAE7 /* StatusMenuController.swift */,
 				0F3F6FE51C45EFC3001EBAE7 /* SettingsWindow.swift */,
 				0F3F6FE61C45EFC3001EBAE7 /* SettingsWindow.xib */,
-				0F3F6FE91C45F9EE001EBAE7 /* GitHubConnector.swift */,
+				0F408A4F1C4683CD00DCA898 /* AboutWindow.swift */,
+				0F408A501C4683CD00DCA898 /* AboutWindow.xib */,
 			);
 			path = PullRequestNotifierBar;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 				0F3F6FD91C45DB36001EBAE7 /* Assets.xcassets in Resources */,
 				0F3F6FDC1C45DB36001EBAE7 /* MainMenu.xib in Resources */,
 				0F3F6FE81C45EFC3001EBAE7 /* SettingsWindow.xib in Resources */,
+				0F408A521C4683CD00DCA898 /* AboutWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +152,7 @@
 				0F3F6FE71C45EFC3001EBAE7 /* SettingsWindow.swift in Sources */,
 				0F3F6FEA1C45F9EE001EBAE7 /* GitHubConnector.swift in Sources */,
 				0F3F6FD71C45DB36001EBAE7 /* AppDelegate.swift in Sources */,
+				0F408A511C4683CD00DCA898 /* AboutWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +293,7 @@
 				0F3F6FE21C45DB36001EBAE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

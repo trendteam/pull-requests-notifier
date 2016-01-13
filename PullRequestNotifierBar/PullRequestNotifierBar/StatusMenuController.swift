@@ -15,6 +15,7 @@ class StatusMenuController: NSObject, SettingsWindowDelegate, GitHubConnectorDel
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     
     var settingsWindow : SettingsWindow!
+    var aboutWindow : AboutWindow!
     var githubConnector : GitHubConnector!
     
     override func awakeFromNib() {
@@ -23,9 +24,10 @@ class StatusMenuController: NSObject, SettingsWindowDelegate, GitHubConnectorDel
         statusItem.image = icon
         statusItem.menu = statusMenu
         
-        settingsWindow = SettingsWindow();
-        settingsWindow.delegate = self;
-        githubConnector = GitHubConnector(delegate: self);
+        settingsWindow = SettingsWindow()
+        aboutWindow = AboutWindow()
+        settingsWindow.delegate = self
+        githubConnector = GitHubConnector(delegate: self)
         
         updatePendingPullRequest()
         NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "updatePendingPullRequest", userInfo: nil, repeats: true)
@@ -41,6 +43,10 @@ class StatusMenuController: NSObject, SettingsWindowDelegate, GitHubConnectorDel
     
     @IBAction func settingsClicked(sender: NSMenuItem) {
         settingsWindow.showWindow(nil)
+    }
+    
+    @IBAction func aboutClicked(sender: NSMenuItem) {
+        aboutWindow.showWindow(nil)
     }
     
     @IBAction func showPRClicked(sender: AnyObject) {
