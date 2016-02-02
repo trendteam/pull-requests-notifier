@@ -19,8 +19,8 @@ class SettingsWindow: NSWindowController, NSWindowDelegate {
     
     var delegate : SettingsWindowDelegate?
     
-    @IBOutlet weak var userNameTextField: NSTextField!
-    @IBOutlet weak var tokenTextField: NSTextField!
+    @IBOutlet weak var userNameTextField: CopyPasteTextField!
+    @IBOutlet weak var tokenTextField: CopyPasteTextField!
 
     override var windowNibName : String! {
         return "SettingsWindow"
@@ -54,5 +54,10 @@ class SettingsWindow: NSWindowController, NSWindowDelegate {
         let defaults = NSUserDefaults.standardUserDefaults()
         return defaults.stringForKey(USER_DEFAULT_TOKEN) ?? "";
     }
+    
+    @IBAction func okButtonClicked (sender: AnyObject) {
+        self.close()
+    }
+
     
 }
